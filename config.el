@@ -64,6 +64,8 @@
 
 (after! ess-mode
   (map! :map ess-mode-map :m "SPC j" #'ess-eval-region-or-line-and-step))
+(after! julia-mode
+  (map! :map julia-mode-map :m "SPC j" #'julia-repl-send-region-or-line))
 
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
