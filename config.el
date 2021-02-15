@@ -73,3 +73,9 @@
 (global-set-key (kbd "M-k") 'evil-window-up)
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-l") 'evil-window-right)
+
+
+
+;; org mode settings
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
