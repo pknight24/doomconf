@@ -26,8 +26,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-monokai-pro)
-;;(load-theme `doom-one)
+(setq doom-theme 'doom-material)
 
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -57,6 +56,9 @@
 ;; they are implemented.
 
 ;;;;;;;;;;;;;;;; Below is added by parker!
+;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;
+
 
 ;; this is to toggle neotree with f8
 (global-set-key [f8] 'neotree-toggle)
