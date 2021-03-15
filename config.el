@@ -26,8 +26,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-material)
-
+(setq doom-theme 'doom-flatwhite)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -35,7 +34,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'nil)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -79,3 +78,18 @@
 ;; org mode settings
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-hide-leading-stars t)
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
+         "* TODO %?\n %i")
+      ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
+         "* %U %?\n %i"))
+      )
+
+
+
+
+;; for better pdf viewing
+(setq doc-view-continuous t)
