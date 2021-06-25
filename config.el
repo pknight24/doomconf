@@ -26,7 +26,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-flatwhite)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -85,7 +85,9 @@
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO %?\n %i")
       ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
-         "* %U %?\n %i"))
+       "* %T %?\n %i")
+      ("d" "Daily log" entry (file+headline "~/org/daily.org" "Log")
+       "* %t %?\n %i"))
       )
 
 
