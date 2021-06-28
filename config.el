@@ -68,16 +68,15 @@
 (after! julia-mode
   (map! :map julia-mode-map :m "SPC j" #'julia-repl-send-region-or-line))
 
+(elpy-enable)
+(setq python-shell-exec-path '("~/anaconda3/bin"))
+
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-l") 'evil-window-right)
 
 
-
-;; org mode settings
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (setq org-hide-leading-stars t)
 
@@ -89,8 +88,6 @@
       ("d" "Daily log" entry (file+headline "~/org/daily.org" "Log")
        "* %t %?\n %i"))
       )
-
-
 
 
 ;; for better pdf viewing
