@@ -89,6 +89,12 @@
        "* %t %?\n %i"))
       )
 
+(load! "org-bullets.el")
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
+
 
 ;; for better pdf viewing
 (setq doc-view-continuous t)
