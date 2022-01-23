@@ -26,7 +26,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-badger)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -63,10 +63,13 @@
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
 
-(after! ess-mode
-  (map! :map ess-mode-map :m "SPC j" #'ess-eval-region-or-line-and-step))
-(after! julia-mode
-  (map! :map julia-mode-map :m "SPC j" #'julia-repl-send-region-or-line))
+(use-package ess
+  :mode (
+         ("\\.jl\\'" . ess-mode)
+         ("\\.R\\'"  . ess-mode)
+         ("\\.r\\'"  . ess-mode)
+	 )
+)
 
 (elpy-enable)
 (setq python-shell-exec-path '("~/anaconda3/bin"))
@@ -81,7 +84,7 @@
 (setq org-hide-leading-stars t)
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/todo.org" "tasks")
+      '(("t" "Todo" entry (file "~/org/todo.org")
          "* TODO %?\n %i")
       ("n" "Note" entry (file+headline "~/org/notes.org" "notes")
        "* %T %?\n %i")
